@@ -2,10 +2,10 @@ package funcao;
 
 import java.util.Scanner;
 
-public class jogoDAvelha {
+public class jogo {
 	static Scanner scanner = new Scanner(System.in);
 	static String jogoDAvelha[][] = new String[3][3];
-	static int preencheu, perguntar = 0, jogador = 1, fiscalizador = 0, para = 0;
+	static int preencheu, perguntar = 0, jogador = 1, fiscalizador = 0, para = 0, contador=0;
 	
 
 	public static void main(String[] args) {
@@ -70,12 +70,10 @@ public class jogoDAvelha {
 	}
 
 	static public int ganhador(int para) {
-		int contador = 0;
-		for (int i = 0; i < 4; i++) {
-			for (int j = 0; j < 4; j++) {
+		contador++;
 				if (jogoDAvelha[0][0] == "x" && jogoDAvelha[0][1] == "x" && jogoDAvelha[0][2] == "x"
 						|| jogoDAvelha[0][0] == "x" && jogoDAvelha[1][0] == "x" && jogoDAvelha[2][0] == "x"
-						|| jogoDAvelha[1][0] == "x" && jogoDAvelha[1][1] == "x" && jogoDAvelha[2][2] == "x"
+						|| jogoDAvelha[1][0] == "x" && jogoDAvelha[1][1] == "x" && jogoDAvelha[1][2] == "x"
 						|| jogoDAvelha[0][1] == "x" && jogoDAvelha[1][1] == "x" && jogoDAvelha[2][1] == "x"
 						|| jogoDAvelha[2][0] == "x" && jogoDAvelha[2][1] == "x" && jogoDAvelha[2][2] == "x"
 						|| jogoDAvelha[0][2] == "x" && jogoDAvelha[1][2] == "x" && jogoDAvelha[2][2] == "x"
@@ -83,9 +81,9 @@ public class jogoDAvelha {
 						|| jogoDAvelha[0][2] == "x" && jogoDAvelha[1][1] == "x" && jogoDAvelha[2][0] == "x") {
 					para = 2;
 				}
-				if (jogoDAvelha[0][0] == "o" && jogoDAvelha[0][1] == "o" && jogoDAvelha[0][2] == "o"
+				else if (jogoDAvelha[0][0] == "o" && jogoDAvelha[0][1] == "o" && jogoDAvelha[0][2] == "o"
 						|| jogoDAvelha[0][0] == "o" && jogoDAvelha[1][0] == "o" && jogoDAvelha[2][0] == "o"
-						|| jogoDAvelha[1][0] == "o" && jogoDAvelha[1][1] == "o" && jogoDAvelha[2][2] == "o"
+						|| jogoDAvelha[1][0] == "o" && jogoDAvelha[1][1] == "o" && jogoDAvelha[1][2] == "o"
 						|| jogoDAvelha[0][1] == "o" && jogoDAvelha[1][1] == "o" && jogoDAvelha[2][1] == "o"
 						|| jogoDAvelha[2][0] == "o" && jogoDAvelha[2][1] == "o" && jogoDAvelha[2][2] == "o"
 						|| jogoDAvelha[0][2] == "o" && jogoDAvelha[1][2] == "o" && jogoDAvelha[2][2] == "o"
@@ -93,11 +91,8 @@ public class jogoDAvelha {
 						|| jogoDAvelha[0][2] == "o" && jogoDAvelha[1][1] == "o" && jogoDAvelha[2][0] == "o") {
 					para = 1;
 				}
-			}
-		}
-		contador++;
-		if (contador == 9) {
-			para = 3;
+				else if(contador==9) {
+				para=3;
 		}
 		return para;
 	}
