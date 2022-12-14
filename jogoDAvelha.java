@@ -6,8 +6,14 @@ public class jogoDAvelha {
 	static Scanner scanner = new Scanner(System.in);
 	static String jogoDAvelha[][] = new String[3][3];
 	static int preencheu, perguntar = 0, jogador = 1, fiscalizador = 0, para = 0;
+	
 
 	public static void main(String[] args) {
+		for(int i=0;i<3;i++) {
+			for(int j=0;j<3;j++) {
+				jogoDAvelha[i][j]="_";
+			}
+		}
 		System.out.println("Jogador 1-Bolinha\nJogador 2-Xis");
 
 		while (fiscalizador == 0) {
@@ -30,11 +36,9 @@ public class jogoDAvelha {
 	}
 
 	static void jogoVelha() {
-		System.out.println(jogoDAvelha[0][0] + "|" + jogoDAvelha[0][1] + "|" + jogoDAvelha[0][2]);
-		System.out.println("______________");
-		System.out.println(jogoDAvelha[1][0] + "|" + jogoDAvelha[1][1] + "|" + jogoDAvelha[1][2]);
-		System.out.println("______________");
-		System.out.println(jogoDAvelha[2][0] + "|" + jogoDAvelha[2][1] + "|" + jogoDAvelha[2][2]);
+		System.out.println("["+jogoDAvelha[0][0] +"]" + "[" +jogoDAvelha[0][1] + "]" + "[" +jogoDAvelha[0][2]+"]");
+		System.out.println("["+jogoDAvelha[1][0]+"]" + "["+jogoDAvelha[1][1]+"]" + "["+jogoDAvelha[1][2]+"]");
+		System.out.println("["+jogoDAvelha[2][0]+"]" + "["+jogoDAvelha[2][1]+"]" + "["+jogoDAvelha[2][2]+"]");
 	}
 
 	static public int preencher(int preencheu, int jogador) {
